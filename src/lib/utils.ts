@@ -1,5 +1,12 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ciptaharmonilestari.co.id';
-export const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? '6281234567890';
+function resolveSiteUrl() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (raw && /^https?:\/\//.test(raw)) return raw.replace(/\/$/, '');
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return 'https://ciptaharmonilestari.co.id';
+}
+export const SITE_URL = resolveSiteUrl();
+export const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER || '6281234567890';
 
 export function rupiah(n: number, compact = true) {
   if (compact) {
