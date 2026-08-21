@@ -26,6 +26,9 @@ export const company = {
 export const heroSlides = [
   { image: '/images/bio-district/cover.jpg', eyebrow: 'Bio District · Serpong', title: 'A Sanctuary Beyond Comfort', text: 'Hunian biophilic 3 menit dari Stasiun Rawa Buntu, karya Atelier Bertiga.', href: '/proyek/bio-district' },
   { image: '/images/bio-district/fac-clubhouse.jpg', eyebrow: 'Fasilitas kawasan', title: 'Clubhouse, kolam renang, dan sungai alami', text: 'Riverside jogging track, outdoor gym, dan BBQ area di tengah kawasan.', href: '/proyek/bio-district#facilities' },
+  { image: 'https://sanctuarycollection-sentul.com/wp-content/uploads/2024/11/V21_AERIAL-MAIN-CLUBHOUSE-RIVERSIDE-2048x1152-2.png', eyebrow: 'The Sanctuary Collection · Sentul Selatan', title: 'Premium Resort Living by the Mountain', text: 'Orchard Riviera: rumah tepi sungai berlatar Gunung Salak, kolam Olympic-size.', href: '/proyek/the-sanctuary-collection' },
+  { image: 'https://www.mazentabintaro.id/wp-content/uploads/2022/01/Perempatan-Jalan-1.jpg', eyebrow: 'Mazenta Residence · Bintaro', title: 'Japan Ambiance Living', text: 'Hunian premium bergaya Jepang karya Atelier Riri, 5 menit dari Bintaro Xchange.', href: '/proyek/mazenta' },
+  { image: 'https://www.narayaserpong.com/wp-content/uploads/2023/03/home-web.jpg', eyebrow: 'Naraya Serpong', title: 'Affordable Luxury, Tropical & Contemporary', text: '48 unit rumah dua lantai dengan 12 fitur ramah lingkungan.', href: '/proyek/naraya-serpong' },
   { image: '/images/bio-district/interior-1.jpg', eyebrow: 'CHL Group · Harita Group', title: 'Menciptakan Rumah Indah untuk Kehidupan Indah', text: '7 proyek berjalan dan 30+ lahan di Jakarta dan sekitarnya sejak 2015.', href: '/tentang-kami' },
 ];
 

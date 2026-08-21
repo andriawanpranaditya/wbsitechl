@@ -34,6 +34,7 @@ export interface Project {
   gallery: string[];
   siteplan?: string;
   brochure?: string;
+  website?: string;    // microsite resmi proyek
   faq: { q: string; a: string }[];
   sales: { name: string; whatsapp: string };
   seo: { title: string; description: string; keywords: string[] };

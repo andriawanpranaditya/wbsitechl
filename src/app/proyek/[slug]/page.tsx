@@ -147,6 +147,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <p className="mt-2 font-display text-2xl text-forest">Jadwalkan kunjungan</p>
             <div className="mt-5"><LeadForm project={p.slug} source={`project-${p.slug}`} compact cta="Minta dihubungi" /></div>
             <a href={wa} target="_blank" rel="noreferrer" data-track="wa_click" className="btn mt-3 w-full bg-[#25D366] text-white hover:brightness-95">Chat WhatsApp</a>
+            {p.website && <a href={p.website} target="_blank" rel="noreferrer" className="mt-3 block text-center text-xs text-stone hover:text-gold-deep">Kunjungi microsite resmi →</a>}
           </div>
         </aside>
       </div>
