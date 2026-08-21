@@ -32,6 +32,8 @@ export interface Project {
   facilities: string[];
   locationAdvantages: { label: string; value: string }[];
   gallery: string[];
+  siteplan?: string;
+  brochure?: string;
   faq: { q: string; a: string }[];
   sales: { name: string; whatsapp: string };
   seo: { title: string; description: string; keywords: string[] };

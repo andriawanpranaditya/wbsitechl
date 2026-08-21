@@ -96,8 +96,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* 6. Site plan */}
           <section><H id="siteplan" title="Site plan" />
-            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={`https://picsum.photos/seed/${p.slug}-siteplan/1600/1000`} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" className="object-cover" /></div>
-            <a href="#contact" className="btn-ghost mt-4">Unduh site plan (PDF)</a>
+            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={p.siteplan ?? `https://picsum.photos/seed/${p.slug}-siteplan/1600/1000`} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" className="object-contain bg-forest-deep" /></div>
+            {p.brochure ? <a href={p.brochure} target="_blank" rel="noreferrer" className="btn-ghost mt-4">Unduh e-flyer (PDF)</a> : <a href="#contact" className="btn-ghost mt-4">Minta site plan (PDF)</a>}
           </section>
 
           {/* 7. Gallery */}

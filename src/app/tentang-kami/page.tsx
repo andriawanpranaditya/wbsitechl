@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: 'Tentang Kami', description: `Profil 
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="Tentang kami" title={company.name} lead={company.tagline} />
+      <PageHero eyebrow="Tentang kami" title={company.name} lead={company.about} />
       <Section eyebrow="Visi & misi" title={company.vision}>
         <ul className="grid gap-4 md:grid-cols-2">{company.mission.map((m) => <li key={m} className="card flex gap-4 p-5"><span className="petal-divider h-7 w-7 shrink-0" aria-hidden />{m}</li>)}</ul>
       </Section>

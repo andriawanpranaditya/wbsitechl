@@ -5,7 +5,8 @@ export const company = {
   name: 'PT Cipta Harmoni Lestari',
   short: 'CHL',
   tagline: 'Membangun hunian untuk hidup yang harmonis',
-  vision: 'Menjadi developer properti terpercaya di koridor Serpong–Tangerang–Bogor yang menciptakan kawasan berkelanjutan dan bernilai bagi penghuni, mitra, dan masyarakat.',
+  vision: 'Menjadi developer properti boutique terpercaya di Greater Jakarta yang menciptakan hunian berkelanjutan dan bernilai bagi penghuni, mitra, dan masyarakat.',
+  about: 'PT Cipta Harmoni Lestari (CHL Group) berdiri 1 Juli 2015 sebagai divisi pengembangan real estate boutique dari Harita Group, konglomerasi Indonesia Forbes 50 yang bergerak di kelapa sawit, nikel, bauksit, dan real estate. CHL telah menyelesaikan sejumlah proyek di Greater Jakarta, di antaranya The Sanctuary Collection, Mazenta Residence, Marchand Hype Station, dan Naraya Serpong.',
   mission: [
     'Mengembangkan hunian berkualitas di setiap segmen, dari subsidi hingga premium.',
     'Merancang kawasan yang menjaga keseimbangan ruang hijau dan ruang hidup.',
@@ -26,7 +27,7 @@ export const stats = [
 ];
 
 export const milestones = [
-  { year: '2012', text: 'CHL berdiri dan memulai pengembangan pertama di Tangerang.' },
+  { year: '2015', text: 'CHL berdiri 1 Juli 2015 sebagai divisi real estate boutique Harita Group.' },
   { year: '2016', text: 'Peluncuran Permai Indah, program rumah subsidi di koridor Cilejit.' },
   { year: '2019', text: 'Banara Serpong terjual habis tahap 1 dalam 6 bulan.' },
   { year: '2023', text: 'Peluncuran The Sanctuary Collection, masuk segmen premium.' },
@@ -41,12 +42,17 @@ export const management = [
 ];
 
 export const awards = [
-  { title: 'Best Affordable Housing Developer', by: 'Properti Indonesia Award 2024' },
-  { title: 'Top Township Development – Banten', by: 'Golden Property Awards 2025' },
-  { title: 'Green Concept Residential', by: 'Indonesia Property Watch 2026' },
+  { title: 'Best Housing Development (Representing Indonesia in Asia)', by: '2021' },
+  { title: 'Best High-End Housing Development (Greater Jakarta)', by: '2021' },
+  { title: 'Best Housing Architectural Design (Indonesia)', by: '2021' },
+  { title: 'Golden Property Awards — Best Premium Housing Development', by: '2021' },
+  { title: 'Best Eco Friendly Housing Development', by: '2022' },
+  { title: 'Best Mid End Housing Architectural Design', by: '2022' },
+  { title: 'Housing Estate Most Favored Premium Medium Class', by: '2020' },
+  { title: 'First Hype Station in Indonesia', by: '2020' },
 ];
 
-export const banks = ['BCA', 'Mandiri', 'BNI', 'BRI', 'BTN', 'CIMB Niaga', 'Maybank', 'Permata', 'OCBC', 'BSI'];
+export const banks = ['BCA', 'BNI', 'BRI', 'BSI', 'Danamon', 'Mandiri', 'Permata', 'UOB', 'BTN'];
 
 export const promos: Promo[] = [
   { slug: 'dp-0-bio-district', title: 'DP 0% & Free Biaya KPR — Bio District', summary: 'Berlaku untuk 50 pembeli pertama tahap Launching. Bonus smart door lock dan AC 2 unit.', projectSlug: 'bio-district', startDate: '2026-08-01', endDate: '2026-10-31', kind: 'promo', cover: img('promo1') },

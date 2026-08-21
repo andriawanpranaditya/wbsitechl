@@ -70,7 +70,7 @@ export default function Home() {
       <Section eyebrow="Kepercayaan" title="Diakui industri, didukung perbankan">
         <div className="grid gap-10 lg:grid-cols-2">
           <ul className="space-y-4">
-            {awards.map((a) => (
+            {awards.slice(0, 4).map((a) => (
               <li key={a.title} className="flex gap-4 border-b border-sand pb-4">
                 <span className="petal-divider mt-1 h-7 w-7 shrink-0" aria-hidden />
                 <div><p className="font-semibold text-forest">{a.title}</p><p className="text-sm text-stone">{a.by}</p></div>

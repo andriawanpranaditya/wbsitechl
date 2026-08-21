@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-site grid gap-10 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
           <Image src="/logo-chl.png" alt="Cipta Harmoni Lestari" width={150} height={137} />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed">{company.tagline}. Mengembangkan hunian dan kawasan komersial di Serpong, Tangerang, dan Bogor sejak 2012.</p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed">{company.tagline}. Mengembangkan hunian dan kawasan komersial di Serpong, Tangerang, dan Bogor sejak 2015.</p>
           <p className="mt-6 text-sm">{company.address}</p>
           <p className="mt-1 text-sm"><a href={`tel:${company.phone.replace(/\s/g, '')}`} className="hover:text-gold">{company.phone}</a> · <a href={`mailto:${company.email}`} className="hover:text-gold">{company.email}</a></p>
         </div>
