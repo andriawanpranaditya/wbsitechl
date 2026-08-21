@@ -95,7 +95,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
               {p.facilities.map((f) => { const item = typeof f === 'string' ? { name: f, image: undefined } : f; return (
                 <li key={item.name} className="card overflow-hidden">
-                  {item.image && <div className="relative aspect-[4/3]"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover" /></div>}
+                  {item.image && <div className="relative aspect-[3/4] bg-sand"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover" /></div>}
                   <p className="px-4 py-3 text-sm font-medium text-forest">{item.name}</p>
                 </li>); })}
             </ul>

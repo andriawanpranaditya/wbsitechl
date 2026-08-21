@@ -18,11 +18,11 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
 
   return (
     <>
-      <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
+      <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
         {images.map((g, i) => (
           <button key={g} type="button" onClick={() => setIdx(i)} aria-label={`Perbesar foto ${i + 1}`}
-            className={`group relative overflow-hidden rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold ${i === 0 ? 'col-span-2 row-span-2 aspect-square' : 'aspect-square'}`}>
-            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover transition duration-300 group-hover:scale-105" />
+            className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
+            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
           </button>
         ))}
       </div>
@@ -32,7 +32,7 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
           <button onClick={close} aria-label="Tutup" className="absolute right-4 top-4 rounded-full bg-white/10 px-4 py-2 text-2xl leading-none text-white hover:bg-white/20">×</button>
           <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Sebelumnya" className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 px-4 py-3 text-2xl text-white hover:bg-white/20 md:left-6">‹</button>
           <button onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Berikutnya" className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 px-4 py-3 text-2xl text-white hover:bg-white/20 md:right-6">›</button>
-          <div className="relative h-[80vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative h-[88vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
             <Image src={images[idx]} alt={`${name} ${idx + 1}`} fill sizes="100vw" className="object-contain" priority />
           </div>
           <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/70">{idx + 1} / {images.length}</p>
