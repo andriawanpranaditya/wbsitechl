@@ -29,7 +29,7 @@ export interface Project {
   usp: string[];
   concept: string;
   units: UnitType[];
-  facilities: string[];
+  facilities: (string | { name: string; image: string })[];
   locationAdvantages: { label: string; value: string }[];
   gallery: string[];
   siteplan?: string;

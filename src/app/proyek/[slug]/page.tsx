@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { projects, getProject, typeLabel } from '@/data/projects';
 import { promos } from '@/data/content';
 import LeadForm from '@/components/LeadForm';
+import Gallery from '@/components/Gallery';
 import { rupiah, waLink, SITE_URL, isActive, formatDate } from '@/lib/utils';
 
 export function generateStaticParams() { return projects.map((p) => ({ slug: p.slug })); }
@@ -91,7 +92,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* 5. Facilities */}
           <section><H id="facilities" title="Fasilitas" />
-            <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">{p.facilities.map((f) => <li key={f} className="rounded-xl border border-sand bg-white px-4 py-3 text-sm">{f}</li>)}</ul>
+            <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+              {p.facilities.map((f) => { const item = typeof f === 'string' ? { name: f, image: undefined } : f; return (
+                <li key={item.name} className="card overflow-hidden">
+                  {item.image && <div className="relative aspect-[4/3]"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover" /></div>}
+                  <p className="px-4 py-3 text-sm font-medium text-forest">{item.name}</p>
+                </li>); })}
+            </ul>
           </section>
 
           {/* 6. Site plan */}
@@ -102,7 +109,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* 7. Gallery */}
           <section><H id="gallery" title="Galeri" />
-            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">{p.gallery.map((g, i) => <div key={g} className={`relative overflow-hidden rounded-xl ${i === 0 ? 'col-span-2 row-span-2 aspect-square' : 'aspect-square'}`}><Image src={g} alt={`${p.name} ${i + 1}`} fill sizes="33vw" className="object-cover" /></div>)}</div>
+            <Gallery images={p.gallery} name={p.name} />
           </section>
 
           {/* 8. Advantages */}

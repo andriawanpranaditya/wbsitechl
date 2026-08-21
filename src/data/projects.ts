@@ -26,7 +26,16 @@ export const projects: Project[] = [
       { name: 'Type B', landArea: 72, buildingArea: 102, bedrooms: 3, bathrooms: 3, priceFrom: 2_097_000_000, spec: ['Kavling 6 × 12 m', 'Floor area 141 m²', 'Rooftop', '1 inner court', 'Service area', 'Corner unit: LT 96 / LB 108 m²'] },
       { name: 'Type C', landArea: 84, buildingArea: 130, bedrooms: 5, bathrooms: 4, priceFrom: 2_595_417_445, spec: ['Kavling 7 × 12 m', 'Floor area 172 m²', '4+1 kamar tidur, 3+1 kamar mandi', 'Rooftop & storage', '2 inner court', 'Corner unit: LT 108 / LB 140 m²'] },
     ],
-    facilities: ['The Clubhouse', 'Kolam renang', 'Sungai alami & riverside jogging track', 'Outdoor gym', 'Riverside BBQ area', 'Children playground', 'One-gate system & CCTV', 'Security 24 jam'],
+    facilities: [
+      { name: 'The Clubhouse', image: '/images/bio-district/fac-clubhouse.jpg' },
+      { name: 'Kolam renang', image: '/images/bio-district/fac-pool.jpg' },
+      { name: 'Riverside jogging track', image: '/images/bio-district/fac-jogging.jpg' },
+      { name: 'Outdoor gym', image: '/images/bio-district/fac-gym.jpg' },
+      { name: 'Riverside BBQ area', image: '/images/bio-district/fac-bbq.jpg' },
+      { name: 'Children playground', image: '/images/bio-district/fac-playground.jpg' },
+      { name: 'One-gate system & CCTV', image: '/images/bio-district/fac-gate.jpg' },
+      { name: 'Smart digital door lock', image: '/images/bio-district/fac-security.jpg' },
+    ],
     locationAdvantages: [
       { label: 'Stasiun KRL Rawa Buntu', value: '3 menit' },
       { label: 'Tanah Abang via commuter line', value: '45 menit' },
