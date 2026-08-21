@@ -1,5 +1,7 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ciptaharmonilestari.co.id';
-export const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? '6281234567890';
+﻿export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://ciptaharmonilestari.co.id');
+export const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER || '6281234567890';
 
 export function rupiah(n: number, compact = true) {
   if (compact) {
