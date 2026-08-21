@@ -1,0 +1,27 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import type { Project } from '@/data/types';
+import { typeLabel } from '@/data/projects';
+import { rupiah } from '@/lib/utils';
+
+const statusColor: Record<Project['status'], string> = { Launching: 'bg-gold text-forest-deep', 'Ready Stock': 'bg-forest text-ivory', 'Sold Out': 'bg-stone text-white', 'Coming Soon': 'bg-white text-forest border border-forest/20' };
+
+export default function ProjectCard({ p }: { p: Project }) {
+  return (
+    <Link href={`/proyek/${p.slug}`} className="card group overflow-hidden transition hover:-translate-y-0.5 hover:shadow-lg">
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <Image src={p.cover} alt={p.name} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
+        <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold ${statusColor[p.status]}`}>{p.status}</span>
+      </div>
+      <div className="p-5">
+        <p className="eyebrow">{typeLabel[p.type]} · {p.area}</p>
+        <h3 className="mt-2 font-display text-xl text-forest">{p.name}</h3>
+        <p className="mt-1 text-sm text-stone">{p.tagline}</p>
+        <div className="mt-4 flex items-end justify-between border-t border-sand pt-4">
+          <div><p className="text-xs text-stone">Mulai</p><p className="font-semibold text-forest">{rupiah(p.priceFrom)}</p></div>
+          <span className="text-sm font-semibold text-gold-deep group-hover:underline">Lihat proyek →</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
