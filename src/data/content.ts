@@ -3,53 +3,68 @@ const img = (seed: string) => `https://picsum.photos/seed/${seed}/1200/800`;
 
 export const company = {
   name: 'PT Cipta Harmoni Lestari',
-  short: 'CHL',
-  tagline: 'Membangun hunian untuk hidup yang harmonis',
-  vision: 'Menjadi developer properti boutique terpercaya di Greater Jakarta yang menciptakan hunian berkelanjutan dan bernilai bagi penghuni, mitra, dan masyarakat.',
-  about: 'PT Cipta Harmoni Lestari (CHL Group) berdiri 1 Juli 2015 sebagai divisi pengembangan real estate boutique dari Harita Group, konglomerasi Indonesia Forbes 50 yang bergerak di kelapa sawit, nikel, bauksit, dan real estate. CHL telah menyelesaikan sejumlah proyek di Greater Jakarta, di antaranya The Sanctuary Collection, Mazenta Residence, Marchand Hype Station, dan Naraya Serpong.',
-  mission: [
-    'Mengembangkan hunian berkualitas di setiap segmen, dari subsidi hingga premium.',
-    'Merancang kawasan yang menjaga keseimbangan ruang hijau dan ruang hidup.',
-    'Membangun kemitraan jangka panjang dengan agen, perbankan, dan pemerintah daerah.',
-    'Mengutamakan ketepatan serah terima dan layanan purna jual.',
+  short: 'CHL Group',
+  tagline: 'Menciptakan Rumah Indah untuk Kehidupan Indah',
+  vision: 'Menjadi pengembang hunian kelas menengah atas terpercaya di Jakarta dan sekitarnya, lalu berkembang ke proyek-proyek lain di seluruh Indonesia.',
+  about: 'PT Cipta Harmoni Lestari ("CHL Group") didirikan pada 1 Juli 2015 sebagai divisi pengembangan real estate dari Harita Group, konglomerat terkemuka Indonesia yang berfokus pada bisnis sumber daya alam seperti perkebunan kelapa sawit, nikel, dan bauksit. Dengan portofolio 7 proyek yang sedang berjalan dan lebih dari 30 lahan di Jakarta dan sekitarnya, CHL Group mengkhususkan diri dalam pengembangan perumahan kelas menengah atas.',
+  values: [
+    { title: 'Living with Integrity', text: 'Komunikasi terbuka, keputusan yang etis, dan transparansi; kejujuran sebagai nilai inti.' },
+    { title: 'Assertiveness & Professionalism', text: 'Mengakui kesalahan, terbuka pada kritik, terus memperbaiki diri, dan bersikap profesional.' },
+    { title: 'Strong Commitment', text: 'Berkomitmen, tangguh, dan fokus pada target perusahaan.' },
+    { title: 'Teamwork with Loyalty', text: 'Loyal, dapat diandalkan, rela berkorban, dan berkolaborasi untuk kepentingan bersama.' },
+    { title: 'Service Level Agreements', text: 'Disiplin tinggi dan fokus pada tujuan bersama perusahaan.' },
+    { title: 'Reliable Work Ethic', text: 'Proaktif, inovatif, kreatif, dan menghasilkan tepat waktu.' },
+    { title: 'Harmony & Solidarity', text: 'Suasana kekeluargaan, empati, tidak saling menyalahkan, dan menjaga kekompakan tim.' },
   ],
-  address: 'Marketing Gallery CHL, Jl. Raya Serpong, Tangerang Selatan 15310',
-  phone: '+62 21 5000 0000',
-  email: 'halo@ciptaharmonilestari.co.id',
-  socials: { instagram: 'https://instagram.com/ciptaharmonilestari', youtube: 'https://youtube.com/@ciptaharmonilestari', linkedin: 'https://linkedin.com/company/cipta-harmoni-lestari', tiktok: 'https://tiktok.com/@ciptaharmonilestari' },
+  address: 'Ruko Sorrento Place No. 19, Paramount Gading Serpong, Jl. Ir. Sukarno, Curug Sangereng, Kelapa Dua, Kabupaten Tangerang, Banten 15810',
+  mapsUrl: 'https://maps.app.goo.gl/CxCDVS17HrNmr4j28',
+  phone: '(021) 59992741',
+  email: 'info@ciptaharmoni.com',
+  socials: { instagram: 'https://www.instagram.com/chlgroup.id/', facebook: 'https://www.facebook.com/watch/chlgroup.id/', youtube: 'https://www.youtube.com/channel/UCqZmvwi3Jqo3eJ--vk0b9YQ', tiktok: 'https://www.tiktok.com/@chlgroup.id' },
 };
 
+export const heroSlides = [
+  { image: '/images/bio-district/cover.jpg', eyebrow: 'Bio District · Serpong', title: 'A Sanctuary Beyond Comfort', text: 'Hunian biophilic 3 menit dari Stasiun Rawa Buntu, karya Atelier Bertiga.', href: '/proyek/bio-district' },
+  { image: '/images/bio-district/fac-clubhouse.jpg', eyebrow: 'Fasilitas kawasan', title: 'Clubhouse, kolam renang, dan sungai alami', text: 'Riverside jogging track, outdoor gym, dan BBQ area di tengah kawasan.', href: '/proyek/bio-district#facilities' },
+  { image: '/images/bio-district/interior-1.jpg', eyebrow: 'CHL Group · Harita Group', title: 'Menciptakan Rumah Indah untuk Kehidupan Indah', text: '7 proyek berjalan dan 30+ lahan di Jakarta dan sekitarnya sejak 2015.', href: '/tentang-kami' },
+];
+
 export const stats = [
-  { value: '7', label: 'Proyek aktif' },
-  { value: '120 ha', label: 'Lahan dikembangkan' },
-  { value: '3.400+', label: 'Unit terbangun' },
-  { value: '2.800+', label: 'Keluarga penghuni' },
+  { value: '2015', label: 'Berdiri, bagian dari Harita Group' },
+  { value: '7', label: 'Proyek sedang berjalan' },
+  { value: '30+', label: 'Lahan di Jakarta & sekitarnya' },
+  { value: '15+', label: 'Penghargaan industri' },
 ];
 
 export const milestones = [
-  { year: '2015', text: 'CHL berdiri 1 Juli 2015 sebagai divisi real estate boutique Harita Group.' },
-  { year: '2016', text: 'Peluncuran Permai Indah, program rumah subsidi di koridor Cilejit.' },
-  { year: '2019', text: 'Banara Serpong terjual habis tahap 1 dalam 6 bulan.' },
-  { year: '2023', text: 'Peluncuran The Sanctuary Collection, masuk segmen premium.' },
-  { year: '2026', text: 'Bio District dan Marchand Hype Station resmi diluncurkan.' },
+  { year: '2015', text: 'CHL berdiri 1 Juli 2015 dengan empat pendiri sebagai anak usaha real estate Harita Group.' },
+  { year: '2016', text: 'Cluster pertama Ambara di Banara Serpong — konsep Millennial Smart Living.' },
+  { year: '2017', text: 'Cluster Lenggana, Banara Serpong, bergaya Scandinavian.' },
+  { year: '2018', text: 'Joint venture dengan Perennial Holdings, Wilmar International, dan Qingjian Group untuk The Sanctuary Collection, Sentul Selatan.' },
+  { year: '2019', text: 'Marchand Hype Station, proyek komersial pertama CHL di CBD Emerald Bintaro.' },
+  { year: '2020', text: 'Tanglin Parc, cluster pertama The Sanctuary Collection — Premium Resort Living by the Mountain.' },
+  { year: '2021', text: 'Newton Springs, The Sanctuary Collection, dengan kolam renang Olympic-size pertama di Bogor.' },
+  { year: '2022', text: 'Mazenta Residence, Bintaro — hunian premium bergaya Jepang modern, 3 menit dari Bintaro Xchange.' },
+  { year: '2023', text: 'Naraya Serpong — Affordable Luxury bertema Tropical & Contemporary dengan 12 fitur ramah lingkungan.' },
+  { year: '2024', text: 'Bio District (Tangerang Selatan, konsep biophilic) dan Orchard Riviera, The Sanctuary Collection.' },
 ];
 
 export const management = [
-  { name: 'Budi Santoso', role: 'Direktur Utama' },
-  { name: 'Rina Wijaya', role: 'Direktur Pemasaran' },
-  { name: 'Ahmad Fauzi', role: 'Direktur Operasional' },
-  { name: 'Maya Kusuma', role: 'Direktur Keuangan' },
+  { name: 'Johannes Tanuwijaya', role: 'Chief Executive Officer', photo: 'https://www.ciptaharmoni.com/wp-content/uploads/2024/08/pak-jo-2-1020x1024.jpg' },
+  { name: 'Andreas Audyanto', role: 'Project Chief Executive Officer', photo: 'https://www.ciptaharmoni.com/wp-content/uploads/2024/08/audy3-1024x1024.jpg' },
+  { name: 'Setia Iskandar Rusli', role: 'Project Chief Executive Officer', photo: 'https://www.ciptaharmoni.com/wp-content/uploads/2024/07/DSC08050-2-1024x1024.jpg' },
+  { name: 'Al Imron', role: 'Chief Financial Officer', photo: 'https://www.ciptaharmoni.com/wp-content/uploads/2024/08/pak-al-6-768x768.jpg' },
+  { name: 'Peter Raswono', role: 'Deputy Chief Strategy Officer', photo: 'https://www.ciptaharmoni.com/wp-content/uploads/2024/08/peter3-1024x1024.jpg' },
 ];
 
 export const awards = [
-  { title: 'Best Housing Development (Representing Indonesia in Asia)', by: '2021' },
-  { title: 'Best High-End Housing Development (Greater Jakarta)', by: '2021' },
-  { title: 'Best Housing Architectural Design (Indonesia)', by: '2021' },
-  { title: 'Golden Property Awards — Best Premium Housing Development', by: '2021' },
-  { title: 'Best Eco Friendly Housing Development', by: '2022' },
-  { title: 'Best Mid End Housing Architectural Design', by: '2022' },
-  { title: 'Housing Estate Most Favored Premium Medium Class', by: '2020' },
-  { title: 'First Hype Station in Indonesia', by: '2020' },
+  { title: 'Best High End Housing Architectural Design, Best Housing Landscape Design, Best Eco Friendly Housing Development', by: 'PropertyGuru Indonesia Property Awards 2023' },
+  { title: 'Best Interior Design, Best Mid-End Housing, Highly Commended Eco Friendly House', by: 'PropertyGuru Indonesia Property Awards 2022' },
+  { title: 'Best Housing Development (Representing Indonesia in Asia), Best High-End Housing Development (Greater Jakarta), Best Housing Architectural Design', by: 'PropertyGuru Asia Property Awards 2021' },
+  { title: 'Best Premium Housing Development · Luxury Residential · Most Favorite Premium Residence', by: 'Golden Property Awards, Property & Bank, Urban City 2021' },
+  { title: 'Most Favored Premium Class Medium Scale · Best Community Retain Concept · First Hype Station in Indonesia', by: 'Housing Estate & Property & Bank 2020' },
+  { title: 'Most Recommended Residential Project in South Tangerang', by: 'Indonesia Property & Bank Award 2024' },
+  { title: 'Property & Bank Award, Residence Indonesia Award', by: '2015–2016' },
 ];
 
 export const banks = ['BCA', 'BNI', 'BRI', 'BSI', 'Danamon', 'Mandiri', 'Permata', 'UOB', 'BTN'];
@@ -62,9 +77,9 @@ export const promos: Promo[] = [
 ];
 
 export const articles: Article[] = [
-  { slug: 'mengapa-serpong-jadi-incaran-keluarga-muda', title: 'Mengapa Serpong Jadi Incaran Keluarga Muda di 2026', excerpt: 'Akses tol baru, stasiun KRL, dan pertumbuhan komersial membuat Serpong menjadi koridor hunian paling dicari di barat Jakarta.', category: 'Investasi', author: 'Tim Riset CHL', date: '2026-08-10', cover: img('news1'), body: ['Dalam lima tahun terakhir, harga tanah di koridor Serpong naik rata-rata 12% per tahun.', 'Faktor pendorong utamanya adalah konektivitas: Tol Serpong–Balaraja, KRL Cisauk, dan rencana LRT.', 'CHL mengembangkan Bio District dan Banara Serpong tepat di koridor pertumbuhan ini.'] },
+  { slug: 'chl-group-salurkan-bantuan-csr-banjir-aceh', title: 'CHL Group Salurkan Bantuan CSR untuk Masyarakat Terdampak Banjir di Aceh', excerpt: 'Sebagai bagian dari tanggung jawab sosial, CHL Group menyalurkan bantuan bagi masyarakat terdampak banjir di Aceh.', category: 'Berita', author: 'Corporate Communication', date: '2026-01-12', cover: img('news-csr'), body: ['CHL Group menyalurkan bantuan CSR kepada masyarakat yang terdampak banjir di Aceh pada Januari 2026.', 'Program ini merupakan bagian dari komitmen CHL Group terhadap tanggung jawab sosial perusahaan.', 'Artikel lengkap tersedia di ciptaharmoni.com.'] },
+  { slug: 'most-recommended-residential-project-south-tangerang-2024', title: 'Raih Penghargaan "Most Recommended Residential Project in South Tangerang" di Indonesia Property & Bank Award 2024', excerpt: 'Pengakuan industri atas kualitas pengembangan hunian CHL Group di Tangerang Selatan.', category: 'Berita', author: 'Corporate Communication', date: '2025-08-06', cover: img('news-award'), body: ['CHL Group meraih penghargaan Most Recommended Residential Project in South Tangerang pada Indonesia Property & Bank Award 2024.', 'Penghargaan ini menambah daftar pengakuan industri yang diterima CHL sejak 2015.'] },
   { slug: 'panduan-kpr-subsidi-flpp-2026', title: 'Panduan Lengkap KPR Subsidi FLPP 2026', excerpt: 'Syarat, besaran bunga, dan langkah pengajuan rumah subsidi — dijelaskan sederhana.', category: 'Tips', author: 'Tim Sales Permai Indah', date: '2026-07-22', cover: img('news2'), body: ['KPR FLPP adalah program pembiayaan rumah dengan bunga tetap 5% hingga 20 tahun.', 'Pemohon harus WNI, belum memiliki rumah, dan berpenghasilan sesuai batas yang ditetapkan pemerintah.', 'Siapkan KTP, NPWP, slip gaji, dan rekening koran 3 bulan terakhir.'] },
-  { slug: 'chl-luncurkan-bio-district', title: 'CHL Resmi Luncurkan Bio District Serpong', excerpt: 'Kawasan resort living seluas 25 hektar resmi diluncurkan dengan 120 unit tahap pertama.', category: 'Berita', author: 'Corporate Communication', date: '2026-06-15', cover: img('news3'), body: ['Tangerang Selatan — PT Cipta Harmoni Lestari meluncurkan Bio District, kawasan hunian dengan konsep resort living.', 'Tahap pertama menawarkan 120 unit dalam tiga tipe mulai Rp1,25 miliar.', 'Peluncuran ditandai dengan penanaman 1.000 pohon di area danau retensi.'] },
 ];
 
 export const jobs: Job[] = [

@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { projects, typeLabel } from '@/data/projects';
 
 const nav = [
+  { href: '/', label: 'Home' },
   { href: '/tentang-kami', label: 'Tentang' },
   { href: '/development', label: 'Development', mega: true },
   { href: '/promo', label: 'Promo' },
@@ -19,10 +20,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(false);
   const path = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => { const f = () => setScrolled(window.scrollY > 8); f(); window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
   const types = Object.keys(typeLabel) as (keyof typeof typeLabel)[];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand/70 bg-ivory/90 backdrop-blur" onMouseLeave={() => setMega(false)}>
+    <header className={`sticky top-0 z-50 border-b bg-ivory/90 backdrop-blur transition-all duration-300 ${scrolled ? 'border-sand shadow-[0_8px_30px_-18px_rgba(27,27,24,0.35)]' : 'border-transparent'}`} onMouseLeave={() => setMega(false)}>
       <div className="container-site flex h-[72px] items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="Cipta Harmoni Lestari — beranda">
           <Image src="/logo-mark.png" alt="" width={40} height={39} priority />
@@ -32,7 +35,7 @@ export default function Navbar() {
         <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((n) => (
             <div key={n.href} className="relative flex h-[72px] items-center" onMouseEnter={() => setMega(!!n.mega)}>
-              <Link href={n.href} onClick={() => setMega(false)} className={`text-sm font-medium transition hover:text-gold-deep ${path.startsWith(n.href) ? 'text-forest' : 'text-ink/80'}`}>
+              <Link href={n.href} onClick={() => setMega(false)} className={`link-underline text-sm font-medium transition hover:text-gold-deep ${(n.href === '/' ? path === '/' : path.startsWith(n.href)) ? 'text-forest' : 'text-ink/80'}`}>
                 {n.label}{n.mega && <span className={`ml-1 inline-block text-xs transition ${mega ? 'rotate-180' : ''}`}>▾</span>}
               </Link>
             </div>
@@ -46,7 +49,7 @@ export default function Navbar() {
       </div>
 
           {mega && (
-            <div className="absolute left-0 right-0 top-full hidden border-b border-sand bg-white shadow-xl lg:block" onMouseEnter={() => setMega(true)}>
+            <div className="absolute left-0 right-0 top-full hidden animate-[fadeDown_.25s_ease-out] border-b border-sand bg-white shadow-xl lg:block" onMouseEnter={() => setMega(true)}>
               <div className="container-site grid grid-cols-4 gap-8 py-8">
                 {types.map((t) => (
                   <div key={t}>

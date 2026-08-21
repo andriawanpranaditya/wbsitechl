@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="container-site grid gap-10 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
           <Image src="/logo-chl.png" alt="Cipta Harmoni Lestari" width={150} height={137} />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed">{company.tagline}. Mengembangkan hunian dan kawasan komersial di Serpong, Tangerang, dan Bogor sejak 2015.</p>
-          <p className="mt-6 text-sm">{company.address}</p>
-          <p className="mt-1 text-sm"><a href={`tel:${company.phone.replace(/\s/g, '')}`} className="hover:text-gold">{company.phone}</a> · <a href={`mailto:${company.email}`} className="hover:text-gold">{company.email}</a></p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed">{company.tagline}. Divisi real estate Harita Group, mengembangkan hunian kelas menengah atas di Jakarta dan sekitarnya sejak 2015.</p>
+          <p className="mt-6 text-sm">{company.address} · <a href={company.mapsUrl} target="_blank" rel="noreferrer" className="text-gold hover:underline">Petunjuk arah</a></p>
+          <p className="mt-1 text-sm"><a href={`tel:${company.phone.replace(/[^\d+]/g, '')}`} className="hover:text-gold">{company.phone}</a> · <a href={`mailto:${company.email}`} className="hover:text-gold">{company.email}</a></p>
         </div>
         <div className="md:col-span-2">
           <p className="eyebrow !text-gold">Jelajahi</p>

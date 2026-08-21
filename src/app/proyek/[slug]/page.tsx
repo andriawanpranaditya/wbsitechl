@@ -76,7 +76,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <section><H id="product" title="Tipe unit" />
             <div className="mt-6 grid gap-5 md:grid-cols-2">
               {p.units.map((u) => (
-                <div key={u.name} className="card p-6">
+                <div key={u.name} className="card card-hover p-6">
                   <div className="flex items-start justify-between"><h3 className="font-display text-xl text-forest">{u.name}</h3><span className="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ background: p.accent }}>{rupiah(u.priceFrom)}</span></div>
                   <dl className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
                     <div><dt className="text-stone">LT</dt><dd className="font-semibold">{u.landArea} m²</dd></div>
@@ -94,8 +94,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <section><H id="facilities" title="Fasilitas" />
             <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
               {p.facilities.map((f) => { const item = typeof f === 'string' ? { name: f, image: undefined } : f; return (
-                <li key={item.name} className="card overflow-hidden">
-                  {item.image && <div className="relative aspect-[3/4] bg-sand"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover" /></div>}
+                <li key={item.name} className="card card-hover group overflow-hidden">
+                  {item.image && <div className="relative aspect-[3/4] bg-sand"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-700 ease-out group-hover:scale-105" /></div>}
                   <p className="px-4 py-3 text-sm font-medium text-forest">{item.name}</p>
                 </li>); })}
             </ul>
