@@ -95,21 +95,21 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
               {p.facilities.map((f) => { const item = typeof f === 'string' ? { name: f, image: undefined } : f; return (
                 <li key={item.name} className="card card-hover group overflow-hidden">
-                  {item.image && <div className="relative aspect-[3/4] bg-sand"><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-700 ease-out group-hover:scale-105" /></div>}
+                  {item.image && <div className={`relative ${p.imageOrientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-[4/3]'} bg-sand`}><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-700 ease-out group-hover:scale-105" /></div>}
                   <p className="px-4 py-3 text-sm font-medium text-forest">{item.name}</p>
                 </li>); })}
             </ul>
           </section>
 
           {/* 6. Site plan */}
-          <section><H id="siteplan" title="Site plan" />
-            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={p.siteplan ?? `https://picsum.photos/seed/${p.slug}-siteplan/1600/1000`} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" className="object-contain bg-forest-deep" /></div>
+          {p.siteplan && <section><H id="siteplan" title="Site plan" />
+            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={p.siteplan} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" className="object-contain bg-forest-deep" /></div>
             {p.brochure ? <a href={p.brochure} target="_blank" rel="noreferrer" className="btn-ghost mt-4">Unduh e-flyer (PDF)</a> : <a href="#contact" className="btn-ghost mt-4">Minta site plan (PDF)</a>}
-          </section>
+          </section>}
 
           {/* 7. Gallery */}
           <section><H id="gallery" title="Galeri" />
-            <Gallery images={p.gallery} name={p.name} />
+            <Gallery images={p.gallery} name={p.name} orientation={p.imageOrientation} />
           </section>
 
           {/* 8. Advantages */}

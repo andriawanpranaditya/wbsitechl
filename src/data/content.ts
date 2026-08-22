@@ -29,6 +29,7 @@ export const heroSlides = [
   { image: 'https://sanctuarycollection-sentul.com/wp-content/uploads/2024/11/V21_AERIAL-MAIN-CLUBHOUSE-RIVERSIDE-2048x1152-2.png', eyebrow: 'The Sanctuary Collection · Sentul Selatan', title: 'Premium Resort Living by the Mountain', text: 'Orchard Riviera: rumah tepi sungai berlatar Gunung Salak, kolam Olympic-size.', href: '/proyek/the-sanctuary-collection' },
   { image: 'https://www.mazentabintaro.id/wp-content/uploads/2022/01/Perempatan-Jalan-1.jpg', eyebrow: 'Mazenta Residence · Bintaro', title: 'Japan Ambiance Living', text: 'Hunian premium bergaya Jepang karya Atelier Riri, 5 menit dari Bintaro Xchange.', href: '/proyek/mazenta' },
   { image: 'https://www.narayaserpong.com/wp-content/uploads/2023/03/home-web.jpg', eyebrow: 'Naraya Serpong', title: 'Affordable Luxury, Tropical & Contemporary', text: '48 unit rumah dua lantai dengan 12 fitur ramah lingkungan.', href: '/proyek/naraya-serpong' },
+  { image: '/images/permai-indah/rumah.jpg', eyebrow: 'Permai Indah · Cilejit', title: 'Rumah Pertama Kita, Rp185 Juta', text: 'Rumah subsidi 4 menit dari Stasiun KRL Cilejit — sertifikat pecah, siap huni, cicilan mulai Rp1,19 juta/bulan.', href: '/proyek/permai-indah' },
   { image: '/images/bio-district/hero-interior.jpg', eyebrow: 'CHL Group · Harita Group', title: 'Menciptakan Rumah Indah untuk Kehidupan Indah', text: '7 proyek berjalan dan 30+ lahan di Jakarta dan sekitarnya sejak 2015.', href: '/tentang-kami' },
 ];
 
@@ -73,6 +74,7 @@ export const awards = [
 export const banks = ['BCA', 'BNI', 'BRI', 'BSI', 'Danamon', 'Mandiri', 'Permata', 'UOB', 'BTN'];
 
 export const promos: Promo[] = [
+  { slug: 'permai-indah-voucher-sepeda-listrik', title: 'Beli Permai Indah, langsung dapat voucher Rp500 ribu + sepeda listrik', summary: 'Hadiah langsung untuk pembelian unit Permai Indah, plus gratis biaya surat & AJB, biaya KPR, dan notaris. Syarat & ketentuan berlaku.', projectSlug: 'permai-indah', startDate: '2026-07-15', endDate: '2026-09-30', kind: 'promo', cover: '/images/permai-indah/hero.jpg' },
   { slug: 'dp-0-bio-district', title: 'DP 0% & Free Biaya KPR — Bio District', summary: 'Berlaku untuk 50 pembeli pertama tahap Launching. Bonus smart door lock dan AC 2 unit.', projectSlug: 'bio-district', startDate: '2026-08-01', endDate: '2026-10-31', kind: 'promo', cover: img('promo1') },
   { slug: 'expo-chl-2026', title: 'CHL Property Expo 2026', summary: 'Pameran seluruh proyek CHL dengan harga khusus expo, cashback hingga Rp50 juta, dan undian umrah.', startDate: '2026-09-12', endDate: '2026-09-20', location: 'AEON Mall BSD City', kind: 'event', cover: img('promo2') },
   { slug: 'open-house-sanctuary', title: 'Open House The Sanctuary Collection', summary: 'Lihat langsung show unit Sanctuary 10 & 12. Sesi privat dengan arsitek perancang.', projectSlug: 'the-sanctuary-collection', startDate: '2026-08-29', endDate: '2026-08-30', location: 'Sanctuary Gallery, BSD', kind: 'event', cover: img('promo3') },

@@ -2,7 +2,9 @@
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 
-export default function Gallery({ images, name }: { images: string[]; name: string }) {
+export default function Gallery({ images, name, orientation = 'landscape' }: { images: string[]; name: string; orientation?: 'portrait' | 'landscape' }) {
+  const tile = orientation === 'portrait' ? 'aspect-[9/16]' : 'aspect-[4/3]';
+  const cols = orientation === 'portrait' ? 'md:grid-cols-4' : 'md:grid-cols-3';
   const [idx, setIdx] = useState<number | null>(null);
   const close = useCallback(() => setIdx(null), []);
   const prev = useCallback(() => setIdx((i) => (i === null ? null : (i - 1 + images.length) % images.length)), [images.length]);
@@ -18,11 +20,11 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
 
   return (
     <>
-      <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div className={`mt-6 grid grid-cols-2 gap-3 ${cols}`}>
         {images.map((g, i) => (
           <button key={g} type="button" onClick={() => setIdx(i)} aria-label={`Perbesar foto ${i + 1}`}
-            className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
-            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
+            className={`group relative ${tile} overflow-hidden rounded-xl bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold`}>
+            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
           </button>
         ))}
       </div>
