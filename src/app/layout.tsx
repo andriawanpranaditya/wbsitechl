@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { company } from '@/data/content';
 import { SITE_URL } from '@/lib/utils';
+import { getLang, getDict } from '@/i18n/server';
+import { LangProvider } from '@/i18n/LangProvider';
 
 
 export const metadata: Metadata = {
@@ -23,19 +25,22 @@ const orgSchema = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const lang = getLang(); const t = getDict();
   return (
-    <html lang="id">
+    <html lang={lang}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-sans">
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-forest focus:px-3 focus:py-2 focus:text-ivory">Langsung ke konten</a>
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-forest focus:px-3 focus:py-2 focus:text-ivory">{t.nav.skip}</a>
+        <LangProvider lang={lang}>
+          <Navbar />
+          <main id="main">{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+        </LangProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </body>
     </html>

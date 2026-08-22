@@ -4,19 +4,21 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { projects, typeLabel } from '@/data/projects';
-
-const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/tentang-kami', label: 'Tentang' },
-  { href: '/development', label: 'Development', mega: true },
-  { href: '/promo', label: 'Promo' },
-  { href: '/news', label: 'News' },
-  { href: '/investor', label: 'Investor' },
-  { href: '/karir', label: 'Karir' },
-  { href: '/kontak', label: 'Kontak' },
-];
+import { useLang } from '@/i18n/LangProvider';
+import LangSwitch from './LangSwitch';
 
 export default function Navbar() {
+  const { t, lang } = useLang();
+  const nav = [
+    { href: '/', label: t.nav.home },
+    { href: '/tentang-kami', label: t.nav.about },
+    { href: '/development', label: t.nav.development, mega: true },
+    { href: '/promo', label: t.nav.promo },
+    { href: '/news', label: t.nav.news },
+    { href: '/investor', label: t.nav.investor },
+    { href: '/karir', label: t.nav.career },
+    { href: '/kontak', label: t.nav.contact },
+  ];
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(false);
   const path = usePathname();
@@ -40,10 +42,11 @@ export default function Navbar() {
               </Link>
             </div>
           ))}
-          <Link href="/kontak" className="btn-primary !py-2.5">Hubungi kami</Link>
+          <LangSwitch />
+          <Link href="/kontak" className="btn-primary !py-2.5">{t.nav.cta}</Link>
         </nav>
 
-        <button className="lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Buka menu">
+        <button className="lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={t.nav.openMenu}>
           <span className="block h-0.5 w-6 bg-forest" /><span className="mt-1.5 block h-0.5 w-6 bg-forest" /><span className="mt-1.5 block h-0.5 w-6 bg-forest" />
         </button>
       </div>
@@ -51,14 +54,14 @@ export default function Navbar() {
           {mega && (
             <div className="absolute left-0 right-0 top-full hidden animate-[fadeDown_.25s_ease-out] border-b border-sand bg-white shadow-xl lg:block" onMouseEnter={() => setMega(true)}>
               <div className="container-site grid grid-cols-4 gap-8 py-8">
-                {types.map((t) => (
-                  <div key={t}>
-                    <Link href={`/development/${t}`} onClick={() => setMega(false)} className="eyebrow hover:underline">{typeLabel[t]}</Link>
+                {types.map((ty) => (
+                  <div key={ty}>
+                    <Link href={`/development/${ty}`} onClick={() => setMega(false)} className="eyebrow hover:underline">{t.type[ty]}</Link>
                     <ul className="mt-3 space-y-2">
-                      {projects.filter((p) => p.type === t).map((p) => (
+                      {projects.filter((p) => p.type === ty).map((p) => (
                         <li key={p.slug}><Link href={`/proyek/${p.slug}`} onClick={() => setMega(false)} className="text-sm hover:text-gold-deep">{p.name}</Link></li>
                       ))}
-                      {projects.filter((p) => p.type === t).length === 0 && <li className="text-sm text-stone">Segera hadir</li>}
+                      {projects.filter((p) => p.type === ty).length === 0 && <li className="text-sm text-stone">{lang === "en" ? "Coming soon" : "Segera hadir"}</li>}
                     </ul>
                   </div>
                 ))}
@@ -75,7 +78,7 @@ export default function Navbar() {
                 {n.mega && <div className="mb-2 ml-4 grid grid-cols-2 gap-x-4">{projects.map((p) => <Link key={p.slug} href={`/proyek/${p.slug}`} onClick={() => setOpen(false)} className="py-1.5 text-sm text-stone">{p.name}</Link>)}</div>}
               </div>
             ))}
-            <Link href="/kontak" onClick={() => setOpen(false)} className="btn-primary mt-3">Hubungi kami</Link>
+            <div className="mt-3 flex items-center gap-3"><LangSwitch /><Link href="/kontak" onClick={() => setOpen(false)} className="btn-primary flex-1">{t.nav.cta}</Link></div>
           </div>
         </div>
       )}

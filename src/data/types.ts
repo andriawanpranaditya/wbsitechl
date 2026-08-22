@@ -35,6 +35,9 @@ export interface Project {
   siteplan?: string;
   brochure?: string;
   website?: string;    // microsite resmi proyek
+  taglineEn?: string;  // terjemahan Inggris (opsional)
+  overviewEn?: string;
+  conceptEn?: string;
   imageOrientation?: 'portrait' | 'landscape'; // bentuk tile galeri & fasilitas (default landscape)
   faq: { q: string; a: string }[];
   sales: { name: string; whatsapp: string };

@@ -3,10 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { heroSlides } from '@/data/content';
+import { useLang } from '@/i18n/LangProvider';
 
 const INTERVAL = 6000;
 
 export default function HeroSlider() {
+  const { t, lang } = useLang();
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const n = heroSlides.length;
@@ -35,12 +37,12 @@ export default function HeroSlider() {
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/35 to-forest-deep/5" />
             <div className="container-site relative flex h-full flex-col justify-end pb-36 md:pb-40">
               <div className={`max-w-3xl transition-all duration-700 delay-200 ${k === i ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`}>
-                <p className="eyebrow !text-gold">{s.eyebrow}</p>
-                <h1 className="h-display mt-3 text-4xl md:text-6xl">{s.title}</h1>
-                <p className="mt-4 max-w-xl text-base text-ivory/85 md:text-lg">{s.text}</p>
+                <p className="eyebrow !text-gold">{lang === 'en' && s.eyebrowEn ? s.eyebrowEn : s.eyebrow}</p>
+                <h1 className="h-display mt-3 text-4xl md:text-6xl">{lang === 'en' && s.titleEn ? s.titleEn : s.title}</h1>
+                <p className="mt-4 max-w-xl text-base text-ivory/85 md:text-lg">{lang === 'en' && s.textEn ? s.textEn : s.text}</p>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Link href={s.href} className="btn-gold" tabIndex={k === i ? 0 : -1}>Lihat selengkapnya</Link>
-                  <Link href="/development" className="btn border border-ivory/30 text-ivory hover:bg-ivory/10" tabIndex={k === i ? 0 : -1}>Semua proyek</Link>
+                  <Link href={s.href} className="btn-gold" tabIndex={k === i ? 0 : -1}>{t.common.seeMore}</Link>
+                  <Link href="/development" className="btn border border-ivory/30 text-ivory hover:bg-ivory/10" tabIndex={k === i ? 0 : -1}>{t.common.allProjects}</Link>
                 </div>
               </div>
             </div>
