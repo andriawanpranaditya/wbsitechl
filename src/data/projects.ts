@@ -128,7 +128,7 @@ export const projects: Project[] = [
     status: 'Ready Stock',
     priceFrom: 1_270_000_000, // sementara — cek price list resmi
     featured: true,
-    cover: img('banara'),
+    cover: 'https://www.narayaserpong.com/wp-content/uploads/2023/03/FACADE-2-1024x576.jpg', // sementara: foto Naraya (tetangga Banara) — ganti foto Banara asli
     accent: '#C75B39',
     website: 'https://www.banaraserpong.com/',
     overview: 'Proyek pertama CHL Group (2015) di Jl. Raya Serpong, hanya 1 km dari BSD City. Kawasan 4–5 ha untuk keluarga muda dengan dua cluster: Ambara (2016, tropis modern / Millennial Smart Living) dan Lenggana (2017, Scandinavian). Konsep Custom Smart Environment: fiber optic di tiap unit, jaringan bawah tanah, CCTV, dan layout rumah yang bisa disesuaikan.',
@@ -145,7 +145,7 @@ export const projects: Project[] = [
       { label: 'AEON Mall BSD, ICE, Edutown', value: '10 menit' },
       { label: 'RS Hermina Serpong', value: '7 menit' },
     ],
-    gallery: [img('ban1'), img('ban2'), img('ban3'), img('ban4')],
+    gallery: ['https://www.narayaserpong.com/wp-content/uploads/2023/03/FACADE-2-1024x576.jpg', 'https://www.narayaserpong.com/wp-content/uploads/2023/03/jogging-track.jpg', 'https://www.narayaserpong.com/wp-content/uploads/2023/03/Swimpool.jpg', 'https://www.narayaserpong.com/wp-content/uploads/2023/03/playground.jpg'], // sementara — foto kawasan Naraya
     faq: [{ q: 'Apakah unit sudah siap huni?', a: 'Ya, unit ready stock di Ambara dan Lenggana sudah terbangun; sebagian tersedia full furnished. Hubungi sales untuk stok terkini.' }],
     sales: { name: 'Tim Sales Banara Serpong', whatsapp: '6281234567803' },
     seo: { title: 'Banara Serpong — Rumah Banara Serpong, 1 km dari BSD City | CHL', description: 'Rumah Banara Serpong cluster Ambara & Lenggana, smart environment, dekat stasiun & BSD City. Oleh CHL Group.', keywords: ['rumah banara serpong', 'banara serpong', 'perumahan serpong'] },
@@ -306,7 +306,7 @@ export const projects: Project[] = [
     status: 'Ready Stock',
     priceFrom: 340_000_000, // sementara — cek price list resmi
     featured: false,
-    cover: img('marchand'),
+    cover: 'https://www.mazentabintaro.id/wp-content/uploads/2022/01/Club-House-Eksterior.jpg', // sementara — ganti foto Marchand asli
     accent: '#D9822B',
     website: 'https://www.marchand.id/',
     overview: 'Proyek komersial pertama CHL Group (2019) di CBD Emerald Bintaro Sektor 9 — area komersial pertama dan satu-satunya di Indonesia berkonsep hype station. Bangunan ±3.500 m² dengan 266 unit: 8 ruko di depan dan 3 lantai kios & kedai F&B, ditata seperti festive market dengan akses 24 jam.',
@@ -315,7 +315,7 @@ export const projects: Project[] = [
     units: [{ name: 'Kios', landArea: 4, buildingArea: 4, bedrooms: 0, bathrooms: 0, priceFrom: 340_000_000, spec: ['±2 × 2 m', 'Listrik 1.300 W', 'Strata'] }, { name: 'Ruko', landArea: 60, buildingArea: 120, bedrooms: 0, bathrooms: 2, priceFrom: 2_900_000_000, spec: ['8 unit di bagian depan'] }],
     facilities: ['Plaza & panggung acara', 'Parkir', 'Musala', 'Toilet umum', 'Akses 24 jam', 'Keamanan & CCTV'],
     locationAdvantages: [{ label: 'CBD Emerald Bintaro', value: '0 menit' }, { label: 'Bintaro Xchange', value: '5 menit' }, { label: 'Tol Pondok Aren', value: '5 menit' }],
-    gallery: [img('mar1'), img('mar2'), img('mar3')],
+    gallery: ['https://www.mazentabintaro.id/wp-content/uploads/2022/01/Club-House-Eksterior.jpg', 'https://www.mazentabintaro.id/wp-content/uploads/2022/01/Club-House-Interior-scaled.jpg', 'https://www.mazentabintaro.id/wp-content/uploads/2022/01/Gate-Cluster.jpg'], // sementara
     faq: [{ q: 'Apakah tersedia sistem sewa?', a: 'Tersedia kios strata maupun sewa; hubungi tim leasing untuk skema dan unit tersedia.' }],
     sales: { name: 'Tim Leasing Marchand', whatsapp: '6281234567807' },
     seo: { title: 'Marchand Hype Station Bintaro — Kios & Ruko Lifestyle Hub | CHL', description: 'Marchand Hype Station, pusat gaya hidup milenial di Emerald Bintaro: 266 unit kios, kedai F&B, dan ruko. Oleh CHL Group.', keywords: ['marchand hype station', 'kios bintaro', 'tempat usaha bintaro'] },

@@ -8,7 +8,11 @@ export function filterProjects(f: Filters) {
   let list = projects.filter((p) => (!f.area || p.area === f.area) && (!f.type || p.type === (f.type as PropertyType)) && (!f.project || p.slug === f.project));
   if (f.price) {
     const [lo, hi] = f.price.split('-').map((x) => (x ? Number(x) * 1_000_000 : undefined));
-    list = list.filter((p) => (lo === undefined || p.priceFrom >= lo) && (hi === undefined || p.priceFrom < hi));
+    // Proyek ikut muncul bila ADA tipe unit yang harganya masuk rentang (bukan hanya "harga mulai")
+    list = list.filter((p) => {
+      const prices = [p.priceFrom, ...p.units.map((u) => u.priceFrom)];
+      return prices.some((x) => (lo === undefined || x >= lo) && (hi === undefined || x < hi));
+    });
   }
   if (f.sort === 'price-asc') list = [...list].sort((a, b) => a.priceFrom - b.priceFrom);
   if (f.sort === 'price-desc') list = [...list].sort((a, b) => b.priceFrom - a.priceFrom);
