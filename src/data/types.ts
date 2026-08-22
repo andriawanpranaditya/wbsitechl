@@ -57,11 +57,12 @@ export interface Article {
   slug: string;
   title: string;
   excerpt: string;
-  category: 'Berita' | 'Tips' | 'Investasi';
+  category: 'Berita' | 'Tips' | 'Investasi' | 'CSR' | 'Update Perusahaan';
   author: string;
   date: string;
   cover: string;
   body: string[]; // paragraf
+  source?: string; // tautan artikel asli
 }
 
 export interface Job {

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: 'Developer properti Tangerang, Serpong, dan Bogor. Hunian subsidi hingga premium: Bio District, Banara Serpong, Permai Indah, dan lainnya.',
   openGraph: { type: 'website', locale: 'id_ID', siteName: company.name, images: ['/logo-chl.png'] },
   robots: { index: true, follow: true },
+  referrer: 'no-referrer', // agar gambar dari microsite tidak diblokir hotlink-protection
 };
 
 const orgSchema = {

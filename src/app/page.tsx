@@ -66,7 +66,7 @@ export default function Home() {
           </ul>
           <div>
             <p className="text-sm text-stone">Bank mitra KPR</p>
-            <div className="mt-4 flex flex-wrap items-center gap-3">{banks.map((b) => <span key={b.name} title={b.name} className="flex h-12 items-center rounded-lg border border-sand bg-white px-4 transition hover:border-gold/50"><Image src={b.logo} alt={b.name} width={96} height={32} className="h-7 w-auto object-contain" unoptimized /><span className="sr-only">{b.name}</span></span>)}</div>
+            <div className="mt-4 flex flex-wrap items-center gap-3">{banks.map((b) => <span key={b.name} title={b.name} className="flex h-12 items-center rounded-lg border border-sand bg-white px-4 transition hover:border-gold/50"><img src={b.logo} alt={b.name} className="h-7 w-auto max-w-[110px] object-contain" loading="lazy" /><span className="sr-only">{b.name}</span></span>)}</div>
             <Link href="/kalkulator-kpr" className="btn-ghost mt-6">Simulasi KPR</Link>
           </div>
         </div>
