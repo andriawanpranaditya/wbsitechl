@@ -35,7 +35,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <article style={{ ['--accent' as string]: p.accent }}>
       {/* 1. Overview / hero */}
       <section id="overview" className="relative scroll-mt-32 bg-forest-deep text-ivory">
-        <Image src={p.cover} alt={p.name} fill priority sizes="100vw" className="object-cover opacity-50" />
+        <Image src={p.cover} alt={p.name} fill priority sizes="100vw" unoptimized={p.cover.startsWith('http')} className="object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
         <div className="container-site relative pb-16 pt-28 md:pb-24 md:pt-40">
           <nav aria-label="breadcrumb" className="text-xs text-ivory/70"><Link href="/">Home</Link> / <Link href={`/development/${p.type}`}>{t.type[p.type]}</Link> / {p.name}</nav>
@@ -98,7 +98,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
               {p.facilities.map((f) => { const item = typeof f === 'string' ? { name: f, image: undefined } : f; return (
                 <li key={item.name} className="card card-hover group overflow-hidden">
-                  {item.image && <div className={`relative ${p.imageOrientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-[4/3]'} bg-sand`}><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition duration-700 ease-out group-hover:scale-105" /></div>}
+                  {item.image && <div className={`relative ${p.imageOrientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-[4/3]'} bg-sand`}><Image src={item.image} alt={item.name} fill sizes="(max-width:768px) 50vw, 25vw" unoptimized={item.image.startsWith('http')} className="object-cover transition duration-700 ease-out group-hover:scale-105" /></div>}
                   <p className="px-4 py-3 text-sm font-medium text-forest">{item.name}</p>
                 </li>); })}
             </ul>
@@ -106,7 +106,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* 6. Site plan */}
           {p.siteplan && <section><H id="siteplan" title={tp.siteplan} />
-            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={p.siteplan} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" className="object-contain bg-forest-deep" /></div>
+            <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border border-sand"><Image src={p.siteplan} alt={`Site plan ${p.name}`} fill sizes="(max-width:1024px) 100vw, 800px" unoptimized={p.siteplan.startsWith('http')} className="object-contain bg-forest-deep" /></div>
             {p.brochure ? <a href={p.brochure} target="_blank" rel="noreferrer" className="btn-ghost mt-4">{tp.flyer}</a> : <a href="#contact" className="btn-ghost mt-4">{tp.askSiteplan}</a>}
           </section>}
 

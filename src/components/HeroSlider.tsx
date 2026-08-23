@@ -33,7 +33,7 @@ export default function HeroSlider() {
       <div className="flex h-full transition-transform duration-[900ms] ease-[cubic-bezier(.77,0,.18,1)]" style={{ transform: `translateX(-${i * 100}%)` }}>
         {heroSlides.map((s, k) => (
           <div key={s.image} className="relative h-full w-full shrink-0" aria-hidden={k !== i}>
-            <Image src={s.image} alt="" fill priority={k === 0} quality={90} sizes="100vw" className={`object-cover transition-transform duration-[7000ms] ease-out ${k === i ? 'scale-105' : 'scale-100'}`} />
+            <Image src={s.image} alt="" fill priority={k === 0} quality={85} sizes="100vw" unoptimized={s.image.startsWith('http')} className={`object-cover transition-transform duration-[7000ms] ease-out ${k === i ? 'scale-105' : 'scale-100'}`} />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/35 to-forest-deep/5" />
             <div className="container-site relative flex h-full flex-col justify-end pb-36 md:pb-40">
               <div className={`max-w-3xl transition-all duration-700 delay-200 ${k === i ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`}>

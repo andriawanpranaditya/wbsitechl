@@ -24,7 +24,7 @@ export default function Gallery({ images, name, orientation = 'landscape' }: { i
         {images.map((g, i) => (
           <button key={g} type="button" onClick={() => setIdx(i)} aria-label={`Perbesar foto ${i + 1}`}
             className={`group relative ${tile} overflow-hidden rounded-xl bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold`}>
-            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
+            <Image src={g} alt={`${name} ${i + 1}`} fill sizes="(max-width:768px) 50vw, 33vw" unoptimized={g.startsWith('http')} className="object-cover transition duration-300 group-hover:scale-[1.03]" />
           </button>
         ))}
       </div>
@@ -35,7 +35,7 @@ export default function Gallery({ images, name, orientation = 'landscape' }: { i
           <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Sebelumnya" className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 px-4 py-3 text-2xl text-white hover:bg-white/20 md:left-6">‹</button>
           <button onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Berikutnya" className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 px-4 py-3 text-2xl text-white hover:bg-white/20 md:right-6">›</button>
           <div className="relative h-[88vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <Image src={images[idx]} alt={`${name} ${idx + 1}`} fill sizes="100vw" className="object-contain" priority />
+            <Image src={images[idx]} alt={`${name} ${idx + 1}`} fill sizes="100vw" unoptimized={images[idx].startsWith('http')} className="object-contain" priority />
           </div>
           <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/70">{idx + 1} / {images.length}</p>
         </div>

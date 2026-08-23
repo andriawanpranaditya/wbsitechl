@@ -20,7 +20,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <p className="eyebrow">{a.category} · {formatDate(a.date)} · {a.author}</p>
       <h1 className="h-display mt-3 text-4xl md:text-5xl">{a.title}</h1>
       <p className="mt-4 text-lg text-stone">{a.excerpt}</p>
-      <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-2xl"><Image src={a.cover} alt="" fill priority sizes="768px" className="object-cover" /></div>
+      <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-2xl"><Image src={a.cover} unoptimized={a.cover.startsWith('http')} alt="" fill priority sizes="768px" className="object-cover" /></div>
       <div className="prose-chl mt-10 space-y-5 text-lg leading-relaxed">{a.body.map((p, i) => <p key={i}>{p}</p>)}</div>
       {a.source && <p className="mt-8 text-sm text-stone">{getDict().common.source}: <a href={a.source} target="_blank" rel="noreferrer" className="text-gold-deep hover:underline">ciptaharmoni.com</a></p>}
       <div className="mt-16 border-t border-sand pt-8"><p className="eyebrow">Baca juga</p><ul className="mt-4 space-y-2">{related.map((r) => <li key={r.slug}><Link href={`/news/${r.slug}`} className="font-display text-xl text-forest hover:underline">{r.title}</Link></li>)}</ul></div>

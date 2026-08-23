@@ -45,7 +45,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             {activePromos.map((pr) => (
               <Link key={pr.slug} href={`/promo#${pr.slug}`} className="card card-hover overflow-hidden">
-                <div className="relative aspect-[3/2]"><Image src={pr.cover} alt="" fill sizes="33vw" className="object-cover" /></div>
+                <div className="relative aspect-[3/2]"><Image src={pr.cover} alt="" fill sizes="33vw" className="object-cover" unoptimized={pr.cover.startsWith('http')} /></div>
                 <div className="p-5">
                   <p className="eyebrow">{pr.kind === 'event' ? t.common.event : t.common.promo} · {t.common.until} {formatDate(pr.endDate)}</p>
                   <h3 className="mt-2 font-display text-lg text-forest">{pr.title}</h3>
@@ -81,7 +81,7 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-3">
           {articles.slice(0, 3).map((a) => (
             <Link key={a.slug} href={`/news/${a.slug}`} className="group">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl"><Image src={a.cover} alt="" fill sizes="33vw" className="object-cover transition duration-700 ease-out group-hover:scale-[1.06]" /></div>
+              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl"><Image src={a.cover} alt="" fill sizes="33vw" className="object-cover transition duration-700 ease-out group-hover:scale-[1.06]" unoptimized={a.cover.startsWith('http')} /></div>
               <p className="eyebrow mt-4">{a.category} · {formatDate(a.date)}</p>
               <h3 className="mt-2 font-display text-xl text-forest group-hover:underline">{a.title}</h3>
               <p className="mt-2 text-sm text-stone">{a.excerpt}</p>

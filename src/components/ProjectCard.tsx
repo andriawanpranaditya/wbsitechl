@@ -12,7 +12,7 @@ export default function ProjectCard({ p }: { p: Project }) {
   return (
     <Link href={`/proyek/${p.slug}`} className="card card-hover group overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <Image src={p.cover} alt={p.name} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition duration-700 ease-out group-hover:scale-[1.06]" />
+        <Image src={p.cover} alt={p.name} fill sizes="(max-width:768px) 100vw, 33vw" unoptimized={p.cover.startsWith('http')} className="object-cover transition duration-700 ease-out group-hover:scale-[1.06]" />
         <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold ${statusColor[p.status]}`}>{t.status[p.status]}</span>
       </div>
       <div className="p-5">
