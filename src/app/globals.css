@@ -30,3 +30,4 @@ body { @apply bg-ivory text-ink antialiased; }
 
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @keyframes heroProgress { from { width: 0; } to { width: 100%; } }
+@keyframes popIn { from { opacity: 0; transform: scale(.92) translateY(10px); } to { opacity: 1; transform: none; } }

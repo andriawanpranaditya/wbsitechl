@@ -191,3 +191,13 @@ export const jobs: Job[] = [
   { slug: 'digital-marketing-specialist', title: 'Digital Marketing Specialist', division: 'Sales & Marketing', location: 'Serpong', type: 'Full-time', summary: 'Mengelola kampanye paid & organic, analitik website, dan konten media sosial.' },
   { slug: 'site-engineer', title: 'Site Engineer', division: 'Project', location: 'Cilejit', type: 'Contract', summary: 'Mengawasi pelaksanaan konstruksi rumah subsidi sesuai spesifikasi dan jadwal.' },
 ];
+
+/** Popup promo/berita di beranda. Set enabled: false untuk mematikan, ganti image/href untuk kampanye baru. */
+export const popup = {
+  enabled: true,
+  image: '/images/popup/end-year-big-deals.jpg',
+  alt: 'Bio District End Year Big Deals — langsung tanpa diundi BYD Atto 1 & Vespa Officina 8. Hubungi 0813-8523-7865.',
+  href: '/proyek/bio-district',            // tujuan saat poster diklik
+  id: 'bio-end-year-2026',                  // ganti id saat kampanye baru agar popup muncul lagi
+  endDate: '2026-12-31',                    // otomatis berhenti tampil setelah tanggal ini
+};

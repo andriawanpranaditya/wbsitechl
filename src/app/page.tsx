@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PropertyFinder from '@/components/PropertyFinder';
 import HeroSlider from '@/components/HeroSlider';
+import PromoPopup from '@/components/PromoPopup';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
 import ProjectCard from '@/components/ProjectCard';
@@ -17,6 +18,7 @@ export default function Home() {
   const activePromos = promos.filter((p) => isActive(p.endDate)).slice(0, 3);
   return (
     <>
+      <PromoPopup />
       <HeroSlider />
 
       <div className="container-site relative z-10 -mt-16 md:-mt-12"><PropertyFinder /></div>
