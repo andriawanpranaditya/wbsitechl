@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-WMPGR3RT6Q';
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-5XT0774H2C';
 
 declare global { interface Window { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] } }
 
