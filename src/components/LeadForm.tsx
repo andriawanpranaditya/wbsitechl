@@ -18,7 +18,7 @@ export default function LeadForm({ project, source = 'website', compact = false,
     const payload = { ...Object.fromEntries(fd.entries()), source, page: typeof window !== 'undefined' ? window.location.pathname : '', utm_source: params.get('utm_source') ?? '', utm_medium: params.get('utm_medium') ?? '', utm_campaign: params.get('utm_campaign') ?? '' };
     const res = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const data = await res.json();
-    if (data.ok) { setState('sent'); (window as unknown as { dataLayer?: unknown[] }).dataLayer?.push({ event: 'generate_lead', source, project }); }
+    if (data.ok) { setState('sent'); (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'generate_lead', { source, project: project ?? '' }); }
     else { setState('error'); setError(data.error ?? f.error); }
   }
 
