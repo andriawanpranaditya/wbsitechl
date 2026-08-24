@@ -1,4 +1,7 @@
 import { NextResponse } from 'next/server';
+import { ensureSchema, normalizePhone } from '@/lib/db';
+import { sendWA, notifySales } from '@/lib/wa';
+import { followupSequence, fillTemplate } from '@/data/followups';
 
 // Endpoint lead: validasi → teruskan ke CRM (webhook) → balas.
 // Semua form di situs (proyek, kontak, agen, unduh price list) memanggil endpoint ini.
@@ -17,6 +20,25 @@ export async function POST(req: Request) {
     source: body.source ?? 'website', utm: { source: body.utm_source ?? '', medium: body.utm_medium ?? '', campaign: body.utm_campaign ?? '' },
     page: body.page ?? '', createdAt: new Date().toISOString(),
   };
+
+  // === Sistem follow-up WA otomatis (aktif bila DATABASE_URL terisi) ===
+  try {
+    const p = await ensureSchema();
+    if (p) {
+      const wa = normalizePhone(phone);
+      const seq = followupSequence(lead.project);
+      const first = fillTemplate(seq[0].text, { name, project: lead.project });
+      const nextAt = new Date(Date.now() + seq[1].delayHours * 3600_000);
+      const r = await p.query(
+        `INSERT INTO leads (name, phone, email, project, source, message, status, followup_step, next_followup_at)
+         VALUES ($1,$2,$3,$4,$5,$6,'followup',1,$7) RETURNING id`,
+        [name, wa, lead.email, lead.project, lead.source, lead.message, nextAt]
+      );
+      const sent = await sendWA(wa, first);
+      await p.query(`INSERT INTO wa_log (lead_id, direction, body) VALUES ($1,'keluar',$2)`, [r.rows[0].id, sent ? first : '[GAGAL KIRIM] ' + first]);
+      await notifySales(`🔔 *Lead baru masuk*\nNama: ${name}\nWA: ${wa}\nProyek: ${lead.project || '-'}\nSumber: ${lead.source}\nPesan: ${lead.message || '-'}\n\nFollow-up otomatis sudah berjalan. Lead akan diserahkan begitu ia membalas.`);
+    }
+  } catch (e) { console.error('followup init gagal', e); }
 
   const url = process.env.CRM_WEBHOOK_URL;
   if (url) {
