@@ -27,3 +27,18 @@ export function formatDate(iso: string) {
 export function isActive(endDate: string) {
   return new Date(endDate) >= new Date(new Date().toDateString());
 }
+
+/** Estimasi cicilan KPR per bulan (anuitas). Subsidi: FLPP 5% fix 20 thn, DP ±3%. Non-subsidi: 9%/thn, 20 thn, DP 10%. */
+export function cicilanPerBulan(price: number, type?: string): number {
+  const subsidi = type === 'subsidi';
+  const loan = price * (subsidi ? 0.97 : 0.9);
+  const r = (subsidi ? 5 : 9) / 100 / 12;
+  const n = 240;
+  return Math.round(loan * r / (1 - Math.pow(1 + r, -n)));
+}
+
+/** Format ringkas: 12_500_000 → "Rp12,5 jt", 1_198_000 → "Rp1,2 jt". */
+export function rupiahJt(n: number): string {
+  const jt = n / 1_000_000;
+  return `Rp${jt.toLocaleString('id-ID', { maximumFractionDigits: 1 })} jt`;
+}

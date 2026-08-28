@@ -6,6 +6,7 @@ import { projects, getProject } from '@/data/projects';
 import { promos } from '@/data/content';
 import LeadForm from '@/components/LeadForm';
 import Gallery from '@/components/Gallery';
+import Countdown from '@/components/Countdown';
 import { rupiah, waLink, SITE_URL, isActive, formatDate } from '@/lib/utils';
 import { getDict, getLang } from '@/i18n/server';
 
@@ -124,7 +125,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <section><H id="price" title={tp.price} />
             {projectPromos.length > 0 ? projectPromos.map((pr) => (
               <div key={pr.slug} className="mt-6 rounded-2xl p-6 text-white" style={{ background: p.accent }}>
-                <p className="text-xs uppercase tracking-wider opacity-80">{tp.validUntil} {formatDate(pr.endDate)}</p>
+                <p className="text-xs uppercase tracking-wider opacity-80">{tp.validUntil} {formatDate(pr.endDate)}</p><span className="mt-2 inline-block"><Countdown endDate={pr.endDate} /></span>
                 <p className="mt-2 font-display text-2xl">{pr.title}</p><p className="mt-2 text-sm opacity-90">{pr.summary}</p>
               </div>
             )) : <p className="mt-4 text-stone">{tp.noPromo}</p>}

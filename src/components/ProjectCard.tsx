@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Project } from '@/data/types';
-import { rupiah } from '@/lib/utils';
+import { rupiah, cicilanPerBulan, rupiahJt } from '@/lib/utils';
 import { useLang } from '@/i18n/LangProvider';
 
 const statusColor: Record<Project['status'], string> = { Launching: 'bg-gold text-forest-deep', 'Ready Stock': 'bg-forest text-ivory', 'Sold Out': 'bg-stone text-white', 'Coming Soon': 'bg-white text-forest border border-forest/20' };
@@ -20,7 +20,7 @@ export default function ProjectCard({ p }: { p: Project }) {
         <h3 className="mt-2 font-display text-xl text-forest">{p.name}</h3>
         <p className="mt-1 text-sm text-stone">{lang === 'en' && p.taglineEn ? p.taglineEn : p.tagline}</p>
         <div className="mt-4 flex items-end justify-between border-t border-sand pt-4">
-          <div><p className="text-xs text-stone">{t.common.from}</p><p className="font-semibold text-forest">{rupiah(p.priceFrom)}</p></div>
+          <div><p className="text-xs text-stone">{t.common.from}</p><p className="font-semibold text-forest">{rupiah(p.priceFrom)}</p><p className="mt-0.5 text-[11px] font-semibold text-gold-deep">{t.common.installment} ±{rupiahJt(cicilanPerBulan(p.priceFrom, p.type))}/bln*</p></div>
           <span className="text-sm font-semibold text-gold-deep group-hover:underline">{t.common.viewProject}</span>
         </div>
       </div>

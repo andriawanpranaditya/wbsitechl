@@ -6,6 +6,7 @@ import { promos } from '@/data/content';
 import { getProject } from '@/data/projects';
 import { formatDate, isActive } from '@/lib/utils';
 import { getDict } from '@/i18n/server';
+import Countdown from '@/components/Countdown';
 export const metadata: Metadata = { title: 'Promo & Event', description: 'Promo DP 0%, cashback, dan jadwal pameran serta open house proyek Cipta Harmoni Lestari.' };
 
 export default function PromoPage() {
@@ -19,7 +20,7 @@ export default function PromoPage() {
           <div key={pr.slug} id={pr.slug} className={`card scroll-mt-28 overflow-hidden md:grid md:grid-cols-[220px_1fr] ${active ? '' : 'opacity-60'}`}>
             <div className="relative aspect-[3/2] md:aspect-auto"><Image src={pr.cover} alt="" fill sizes="220px" unoptimized={pr.cover.startsWith('http')} className="object-cover" /></div>
             <div className="p-6">
-              <div className="flex items-center gap-2"><span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${active ? 'bg-gold text-forest-deep' : 'bg-sand text-stone'}`}>{active ? t.promo.active : t.promo.ended}</span><span className="eyebrow">{pr.kind}</span></div>
+              <div className="flex items-center gap-2"><span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${active ? 'bg-gold text-forest-deep' : 'bg-sand text-stone'}`}>{active ? <Countdown endDate={pr.endDate} /> : <span>{t.promo.ended}</span>}</span><span className="eyebrow">{pr.kind}</span></div>
               <h2 className="mt-3 font-display text-xl text-forest">{pr.title}</h2>
               <p className="mt-2 text-sm text-stone">{pr.summary}</p>
               <p className="mt-3 text-xs text-stone">{formatDate(pr.startDate)} – {formatDate(pr.endDate)}{pr.location ? ` · ${pr.location}` : ''}</p>

@@ -4,7 +4,7 @@ const id = {
   nav: { home: 'Home', about: 'Tentang', development: 'Development', promo: 'Promo', news: 'News', investor: 'Investor', career: 'Karir', contact: 'Kontak', cta: 'Hubungi kami', openMenu: 'Buka menu', skip: 'Langsung ke konten' },
   type: { residential: 'Residential', commercial: 'Commercial', kavling: 'Kavling', subsidi: 'Subsidi' },
   status: { 'Launching': 'Launching', 'Ready Stock': 'Ready Stock', 'Sold Out': 'Sold Out', 'Coming Soon': 'Coming Soon' },
-  common: { from: 'Mulai', priceFrom: 'Harga mulai', viewProject: 'Lihat proyek →', viewAll: 'Lihat semua proyek', seeMore: 'Lihat selengkapnya', allProjects: 'Semua proyek', chatWa: 'Chat WhatsApp', until: 's.d.', event: 'Event', promo: 'Promo', directions: 'Petunjuk arah', source: 'Sumber' },
+  common: { from: 'Mulai', installment: 'Cicilan', priceFrom: 'Harga mulai', viewProject: 'Lihat proyek →', viewAll: 'Lihat semua proyek', seeMore: 'Lihat selengkapnya', allProjects: 'Semua proyek', chatWa: 'Chat WhatsApp', until: 's.d.', event: 'Event', promo: 'Promo', directions: 'Petunjuk arah', source: 'Sumber' },
   home: {
     featuredEyebrow: 'Proyek unggulan', featuredTitle: 'Dari rumah pertama hingga hunian premium', featuredLead: 'Setiap proyek CHL berada di koridor pertumbuhan Serpong–Tangerang–Bogor, dekat tol dan stasiun.',
     promoEyebrow: 'Promo & event', promoTitle: 'Penawaran yang sedang berjalan',
@@ -35,7 +35,7 @@ const en: typeof id = {
   nav: { home: 'Home', about: 'About', development: 'Development', promo: 'Promo', news: 'News', investor: 'Investor', career: 'Careers', contact: 'Contact', cta: 'Contact us', openMenu: 'Open menu', skip: 'Skip to content' },
   type: { residential: 'Residential', commercial: 'Commercial', kavling: 'Land plots', subsidi: 'Subsidized housing' },
   status: { 'Launching': 'Launching', 'Ready Stock': 'Ready Stock', 'Sold Out': 'Sold Out', 'Coming Soon': 'Coming Soon' },
-  common: { from: 'From', priceFrom: 'Price from', viewProject: 'View project →', viewAll: 'View all projects', seeMore: 'Learn more', allProjects: 'All projects', chatWa: 'Chat on WhatsApp', until: 'until', event: 'Event', promo: 'Promo', directions: 'Get directions', source: 'Source' },
+  common: { from: 'From', installment: 'Est.', priceFrom: 'Price from', viewProject: 'View project →', viewAll: 'View all projects', seeMore: 'Learn more', allProjects: 'All projects', chatWa: 'Chat on WhatsApp', until: 'until', event: 'Event', promo: 'Promo', directions: 'Get directions', source: 'Source' },
   home: {
     featuredEyebrow: 'Featured projects', featuredTitle: 'From first homes to premium residences', featuredLead: 'Every CHL project sits on the Serpong–Tangerang–Bogor growth corridor, close to toll roads and train stations.',
     promoEyebrow: 'Promo & events', promoTitle: 'Current offers',
