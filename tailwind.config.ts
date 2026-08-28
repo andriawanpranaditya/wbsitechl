@@ -4,12 +4,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: { DEFAULT: '#E3A937', light: '#F3CF7A', deep: '#C8882A' },
-        forest: { DEFAULT: '#1F3D33', deep: '#14291F' },
-        ivory: '#FBF8F1',
-        sand: '#EFE7D6',
-        ink: '#1B1B18',
-        stone: '#6F6B60',
+        gold: { DEFAULT: '#D89B26', light: '#F0C25C', deep: '#A8731A' },
+        forest: { DEFAULT: '#0C2B1E', deep: '#071E14' },
+        ivory: '#FCFBF7',
+        sand: '#EDE4CC',
+        ink: '#14140F',
+        stone: '#5E5A4E',
       },
       fontFamily: {
         display: ['var(--font-display)', 'serif'],
